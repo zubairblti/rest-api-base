@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest API</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Rest API</h1>
+    <div class="form-container">
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="text" id="company" placeholder="Company" required>
+        <input type="text" id="designation" placeholder="Designation" required>
+        <button onclick="addRow()">Submit</button>
+    </div>
+    <div class="search-container">
+        <input type="text" id="search_input" onkeyup="searchFunction()" placeholder="Search...">
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Company</th>
+                <th>Designation</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+    </table>
+    <div id="popup" class="popup-container">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup()">&times;</span>
+            <h2>Update Details</h2>
+            <form id="updateForm">
+                <label for="name">Name:</label>
+                <input type="text" id="popup-name" name="name" placeholder="Enter Name" required>
+                <input type="hidden" id="popup-id" name="id">
+
+                <label for="email">Email:</label>
+                <input type="email" id="popup-email" name="email" placeholder="Enter Email" required>
+
+                <label for="company">Company:</label>
+                <input type="text" id="popup-company" name="company" placeholder="Enter Company Name" required>
+
+                <label for="designation">Designation:</label>
+                <input type="text" id="popup-designation" name="designation" placeholder="Enter Designation" required>
+
+                <button type="button" onclick="updateDetails()">Update</button>
+            </form>
+        </div>
+    </div>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
